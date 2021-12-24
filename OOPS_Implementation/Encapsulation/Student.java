@@ -1,12 +1,31 @@
 package OOPS_Implementation.Encapsulation;
 
-public class Student {
+import java.util.*;
+
+
+public class MyException extends Exception
+{
+    public MyException(String s)
+    {
+        super(s); //passes the message to the Throwable class.
+    }
+}
+
+
+public  class Student {
     private String namw;
     private int rollno;
     private int age;
+    private Scanner sc;
+
+Student()
+{
+    sc = new Scanner(System.in);
+}
 
 
     public int getAge() {
+        
         return this.age;
     }
 
@@ -17,8 +36,25 @@ public class Student {
     public int getRoll() { return this.rollno; }
 
 
-    public void setAge(int newAge) {
-        age = newAge; }
+    public void setAge() {
+        
+        System.out.print("Enter age : ");
+        int age = sc.nextInt();
+        try{
+             if(age <= 0 )
+        {
+                throw new MyException("Age must be greater than 0.");
+        }
+        this.age = age;
+            
+        }
+        catch(MyException e)
+        {
+            System.out.println(e);
+        }
+       
+    }
+    
 
 
     public void setName(String newName)
@@ -27,23 +63,43 @@ public class Student {
     }
 
 
-    public void setRoll(int newRoll) { rollno = newRoll; }
+    public void setRoll() {
+        
+        System.out.print("Enter roll no : ");
+        int roll = sc.nextInt();
+        try{
+            if(roll <=0)
+            {
+                                throw new  MyException("Rollno must be greater than 0.");
+
+            }
+            this.rollno = roll;
+        }
+        catch(MyException e)
+        {
+            System.out.println(e);
+        }
+        
+    }
 }
 
-class TestEncapsulation {
+
+class TestEncapsulation  {
     public static void main(String[] args)
     {
         Student obj = new Student();
 
         obj.setName("Kiran");
-        obj.setAge(22);
-        obj.setRoll(23);
+        obj.setAge();
+        obj.setRoll();
 
         System.out.println("Student's name: " + obj.getName());
-        System.out.println("Student's age: " + obj.getAge());
-        System.out.println("Student's roll: " + obj.getRoll());
+        
+        //due to default constructor the values of age and rollno are automatically set to 0.
+         if(obj.getAge() > 0)
+                System.out.println("Student's age: " + obj.getAge());
+          if(obj.getRoll()>0)
+                System.out.println("Student's roll no : " + obj.getRoll());
 
-        // Direct access of geekRoll is not possible due to encapsulation
-        // System.out.println("Geek's roll: " + obj.geekName);
     }
 }
