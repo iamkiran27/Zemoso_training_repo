@@ -11,7 +11,7 @@ public class ObjectClone {
         this.gpa = gpa;
     }
 
-    // already covered these 2
+    
     @Override
     public String toString() {
         return super.toString();
@@ -26,7 +26,7 @@ public class ObjectClone {
     }
 
 
-    // we will go in details of how to create it in hashmap lecture
+    
     @Override
     public int hashCode() {
         return super.hashCode();
