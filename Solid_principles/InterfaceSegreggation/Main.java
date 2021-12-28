@@ -5,8 +5,6 @@ package SOLID.InterfaceSegreggation;
 interface VegCardMenu
 {
     void showVegItems();
-
-
 }
 interface  NonvegCardItems
 {
