@@ -22,7 +22,6 @@ class LoginUser
         System.out.println("User Logged in successfuly !!");
 
     }
-
 }
 class AddItemsToCart
 {
