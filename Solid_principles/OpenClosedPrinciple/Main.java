@@ -48,7 +48,6 @@ class PaymentGateway
             p = new EMIPayment();
         }
     }
-
     void pay()
     {
         this.p.paymoney();
