@@ -4,7 +4,10 @@ package OOPS_Implementation.Abstaction;
 
  interface Vehicle {
      void  wheels(int wheels);
-     void pedal();
+    default void pedal()
+    {
+        System.out.println("Pedalling !!");
+    }
      void brake();
      void speed();
      void start();
