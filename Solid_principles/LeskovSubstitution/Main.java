@@ -36,7 +36,6 @@ public class Main {
         c.makeCoffee();
         c.addCoffePowder();
         c.addCream();
-
     }
 
 
