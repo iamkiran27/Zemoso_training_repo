@@ -118,11 +118,19 @@ align-items: center;
 
   } */
   .about,.contact {
+    /* height:100vh; */
+    width:100%;
     
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
     height:100vh;
-    
-  background: #f3f4f6;}
+    }
   
+    .contact{
+      background-image: url("../images/photo1.jpg");
+    }
   .contact .content {
     width: 30%;
   }
