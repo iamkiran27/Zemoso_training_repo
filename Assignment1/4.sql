@@ -3,9 +3,10 @@
 
 use sakila;
 
-select table4.film_id, table4.actor_id, actor.first_name, actor.last_name, table4.country, table4.customer_id from (select table3.film_id, table3.customer_id, table3.country, film_actor.actor_id from (select table1.customer_id, table2.film_id, table1.country from (select B.customer_id,B.country_id,country.country, B.city from
-  (select A.customer_id, city.country_id, city.city  from
- (select customer.customer_id, customer.address_id, address.city_id from customer 
+select table4.film_id, table4.actor_id, actor.first_name, actor.last_name, table4.country, table4.customer_id from (
+select table3.film_id, table3.customer_id, table3.country, film_actor.actor_id from (select table1.customer_id, table2.film_id, table1.country from (select B.customer_id,B.country_id,country.country, B.city from
+(select A.customer_id, city.country_id, city.city  from
+(select customer.customer_id, customer.address_id, address.city_id from customer 
  inner join address on customer.address_id = address.address_id) as A 
   inner join city on A.city_id = city.city_id )  
  as B  
